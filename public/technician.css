@@ -1,0 +1,56 @@
+.techShell { max-width: 900px; min-height: 100vh; margin: 0 auto; }
+.techShell header > div { min-width: 0; }
+.techShell header b, .techShell header small { overflow-wrap: anywhere; }
+.techShell header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 22px 22px 0; padding: 22px 26px; color: #fff; background: linear-gradient(125deg, #17394d, #1a7898); border-radius: 18px; box-shadow: 0 12px 30px #17465c24; }
+.techShell header b { display: block; font-size: 23px; letter-spacing: .01em; }
+.techShell header small { display: block; margin-top: 5px; color: #c9e6f1; }
+.techShell header button { flex: 0 0 auto; }
+.techShell main { max-width: none; padding: 20px 22px 40px; }
+.techShell .card { margin-bottom: 16px; }
+.techShell h2 { margin: 0 0 18px; font-size: 21px; }
+.techShell .wide { width: 100%; margin: 8px 0 0; }
+.techShell #loginPanel { max-width: 450px; margin: min(10vh, 90px) auto; padding: 28px; }
+.techShell #loginPanel .muted { margin: 16px 0 0; text-align: center; font-size: 13px; }
+.techShell .searchLine { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px; }
+.techShell .searchLine input { min-width: 0; }
+.techShell .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.techShell .stats .card { padding: 18px; background: linear-gradient(160deg, #fff, #f1f9fc); }
+.techShell .stats small, .techShell .stats span { display: block; color: var(--muted); }
+.techShell .stats b { display: block; margin: 9px 0; font-size: clamp(21px, 3vw, 29px); color: var(--accent-dark); overflow-wrap: anywhere; }
+.techShell .order { padding: 16px 4px; border-bottom: 1px solid var(--line); cursor: pointer; transition: background .15s; }
+.techShell .order:hover { background: #f6fbfd; }
+.techShell .order:last-child { border-bottom: 0; }
+.techShell .order strong { display: block; margin-bottom: 5px; font-size: 16px; }
+.techShell button.order { text-align: left; font-weight: 400; white-space: normal; overflow-wrap: anywhere; padding: 16px; }
+.techShell .order div { overflow-wrap: anywhere; }
+.techShell .order small { display: block; margin-top: 5px; color: var(--muted); }
+.techShell .item { margin: 12px 0; padding: 17px; border: 1px solid var(--line); border-radius: 13px; background: #fbfdfe; }
+.techShell .item strong { font-size: 16px; }
+.techShell .item p { margin: 8px 0; line-height: 1.5; overflow-wrap: anywhere; }
+.techShell #detail > p { overflow-wrap: anywhere; }
+#camera { display: block; width: 100%; max-height: 360px; margin-top: 0; border-radius: 12px; background: #000; object-fit: cover; }
+@media (max-width: 600px) {
+  .techShell header { margin: 0; padding: 16px; border-radius: 0 0 18px 18px; }
+  .techShell header b { font-size: 19px; }
+  .techShell header small { font-size: 11px; }
+  .techShell header button { min-height: 36px; padding: 6px 10px; font-size: 12px; }
+  .techShell main { padding: 15px 14px calc(30px + env(safe-area-inset-bottom)); }
+  .techShell #loginPanel { margin: 24px auto; padding: 22px; }
+  .techShell .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .techShell .stats .card { padding: 14px; margin-bottom: 0; }
+  .techShell .stats .card:last-child { grid-column: 1 / -1; }
+  .techShell .stats b { font-size: 21px; }
+  .techShell .order { min-height: 82px; }
+}
+
+.login-view .techShell { max-width: 1060px; }
+.login-view .techShell header { box-shadow: none; background: transparent; color: var(--ink); }
+.login-view .techShell header small { color: var(--muted); }
+.login-view .techShell main { min-height: auto; }
+.login-view .techShell #loginPanel { margin: 20px auto 50px; max-width: 460px; padding: 36px; }
+.login-view .techShell #loginPanel .loginBrand { margin-bottom: 20px; }
+@media (max-width: 600px) {
+ .login-view .techShell header { padding: 24px 22px 8px; }
+ .login-view .techShell header b { font-size: 20px; }
+ .login-view .techShell #loginPanel { padding: 26px; margin: 14px auto; }
+}

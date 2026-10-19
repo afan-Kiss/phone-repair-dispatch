@@ -1,0 +1,13 @@
+---
+description: GitHub 推送必须使用项目内保存的 api_key
+alwaysApply: true
+---
+
+# GitHub 推送
+
+向 GitHub 推送代码时，**必须**使用项目内已保存的凭据，不要让用户再次提供 token。
+
+1. 凭据文件：项目根目录 `.github-credentials`（本地文件，不提交 Git），格式 `api_key=<GitHub PAT>`
+2. 推送命令：在项目根目录执行 `.\scripts\push-github.ps1`（可带 git push 参数，如 `-u origin main`）
+3. 若尚未配置远程：`git remote add origin https://github.com/<用户>/<仓库>.git`，再用上述脚本推送
+4. 不要用 `git push` 裸命令；脚本会临时注入 token 并在推送后从 `.git/config` 中清除

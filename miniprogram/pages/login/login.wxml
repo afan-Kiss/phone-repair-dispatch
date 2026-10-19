@@ -1,0 +1,13 @@
+<view class="loginPage">
+  <view class="loginHero"><view class="loginMark">修</view><view class="loginTitle">手机维修合作承揽</view><view class="loginSubtitle">维修有记录，承揽更安心</view></view>
+  <view class="card loginCard">
+    <view class="loginWelcome">{{mode==='login'?'欢迎回来':'加入师傅工作台'}}</view>
+    <view class="loginDescription">{{mode==='login'?'登录账号，开始今天的工作':'填写账号资料，提交管理员审核'}}</view>
+    <view class="modeTabs"><text class="{{mode==='login'?'active':''}}" bindtap="modeLogin">账号登录</text><text class="{{mode==='register'?'active':''}}" bindtap="modeRegister">师傅注册</text></view>
+    <view class="label">登录账号</view><input class="input" value="{{username}}" bindinput="usernameInput" placeholder="请输入登录账号"/>
+    <view class="label">登录密码</view><input class="input" password value="{{password}}" bindinput="passwordInput" placeholder="{{mode==='register'?'请设置至少 5 位密码':'请输入登录密码'}}"/>
+    <button class="btn" bindtap="submit" loading="{{loading}}" disabled="{{loading}}">{{mode==='register'?'注册并等待审核':'登录工作台'}}</button>
+    <view class="loginHint" wx:if="{{mode==='register'}}">注册后由管理员审核，审核通过后才能登录。</view>
+  </view>
+  <view class="loginFooter">账号专属登录 · 操作全程留痕</view>
+</view>

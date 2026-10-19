@@ -1,0 +1,8 @@
+<view class="title">手机维修合作承揽 · {{isTech?'我的维修':'维修订单'}}</view>
+<view class="card">
+  <input class="input" value="{{query}}" bindinput="queryInput" placeholder="完整串码、后六位或型号"/>
+  <view class="actionGrid"><button class="btn" bindtap="search">查询</button><button bindtap="scanSerial">扫码查询</button><button wx:if="{{!isTech}}" class="primaryWide" bindtap="goIntake">设备入库</button><button wx:if="{{isTech}}" class="primaryWide" bindtap="goStats">我的工价统计</button></view>
+</view>
+<view class="card" wx:for="{{orders}}" wx:key="id" data-id="{{item.id}}" bindtap="open"><view class="row"><text>订单 #{{item.id}} · {{item.model}}</text><text class="tag">{{item.status_label}}</text></view><view>客户：{{item.customer}}</view><view>串码：{{item.serial}}　后六位：{{item.serial_last6}}</view><view wx:if="{{!isTech}}">参与师傅：{{item.technician_names}}</view><view class="muted">项目完成 {{item.completed_count}} / {{item.item_count}}</view></view>
+<view class="card muted" wx:if="{{orders.length===0}}">暂无订单</view>
+<view class="card"><button bindtap="logout">退出登录</button></view>

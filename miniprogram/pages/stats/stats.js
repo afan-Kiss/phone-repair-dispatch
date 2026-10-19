@@ -1,0 +1,1 @@
+const {request,alert}=require('../../utils/api');Page({data:{today:{},month:{},total:{}},onShow(){this.load()},async load(){try{const r=await request('/stats');for(const key of ['today','month','total'])r[key].wage=(r[key].wage_cents/100).toFixed(2);r.total.pending=(r.total.pending_deduction_cents/100).toFixed(2);this.setData(r)}catch(e){alert(e)}}});

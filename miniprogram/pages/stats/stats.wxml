@@ -1,0 +1,6 @@
+<view class="title">我的工价统计</view>
+<view class="card statCard"><view class="muted">今日净工价</view><view class="statValue">¥{{today.wage}}</view><view class="row"><text>完成项目</text><text>{{today.count}} 项</text></view></view>
+<view class="card statCard"><view class="muted">本月净工价</view><view class="statValue">¥{{month.wage}}</view><view class="row"><text>完成项目</text><text>{{month.count}} 项</text></view></view>
+<view class="card statCard"><view class="muted">累计净工价</view><view class="statValue">¥{{total.wage}}</view><view class="row"><text>完成项目</text><text>{{total.count}} 项</text></view></view>
+
+<view class="card" wx:if="{{total.pending_deduction_cents}}">待扣责任金额：¥{{total.pending}}</view>
